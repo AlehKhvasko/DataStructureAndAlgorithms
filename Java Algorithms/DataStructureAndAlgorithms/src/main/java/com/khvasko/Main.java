@@ -1,5 +1,6 @@
 package com.khvasko;
 
+import com.khvasko.binarysearchtree.BinarySearchTree;
 import com.khvasko.doublyLinkedList.DoublyLinkedList;
 import com.khvasko.linkedlist.LinkedList;
 import com.khvasko.queue.Queue;
@@ -30,21 +31,13 @@ public class Main {
         queue.enqueue(4);
         queue.printQueue();
 
-        class Solution {
-            public int pivotIndex(int[] nums) {
-                int sum = 0, leftsum = 0;
-                for (int x: nums) sum += x;
-                for (int i = 0; i < nums.length; ++i) {
-                    if (leftsum == sum - leftsum - nums[i]) return i;
-                    leftsum += nums[i];
-                }
-                return -1;
-            }
-        }
-        int [] nums = {7,2,-5,2,-1,2};
-        Solution solution = new Solution();
-        System.out.println("pivot");
-        System.out.println(solution.pivotIndex(nums));
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        binarySearchTree.insert(21);
+        binarySearchTree.insert(2);
+        binarySearchTree.insert(4);
+        binarySearchTree.insert(7);
+        System.out.println("bst contains 7 is: " + binarySearchTree.contains(7));
+        System.out.println("bst contains 8 is: " + binarySearchTree.contains(8));
     }
 
 

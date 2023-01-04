@@ -1,6 +1,5 @@
 package com.khvasko.binarysearchtree;
 
-
 public class BinarySearchTree {
     private Node root;
 
