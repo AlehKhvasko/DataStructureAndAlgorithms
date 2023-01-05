@@ -2,6 +2,7 @@ package com.khvasko;
 
 import com.khvasko.binarysearchtree.BinarySearchTree;
 import com.khvasko.doublyLinkedList.DoublyLinkedList;
+import com.khvasko.hashtable.HashTable;
 import com.khvasko.linkedlist.LinkedList;
 import com.khvasko.queue.Queue;
 import org.springframework.boot.SpringApplication;
@@ -38,6 +39,13 @@ public class Main {
         binarySearchTree.insert(7);
         System.out.println("bst contains 7 is: " + binarySearchTree.contains(7));
         System.out.println("bst contains 8 is: " + binarySearchTree.contains(8));
+
+        HashTable hashTable = new HashTable();
+        hashTable.set("nails", 20);
+        hashTable.set("washers", 15);
+        hashTable.set("screws", 115);
+        hashTable.printTable();
+        System.out.println(hashTable.keys());
     }
 
 
