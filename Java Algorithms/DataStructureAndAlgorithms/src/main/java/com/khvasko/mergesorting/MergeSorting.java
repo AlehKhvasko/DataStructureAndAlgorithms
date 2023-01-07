@@ -1,5 +1,7 @@
 package com.khvasko.mergesorting;
 
+import java.util.Arrays;
+
 public class MergeSorting {
     public static int[] merge(int[] array1, int[] array2) {
         int[] combined = new int[array1.length + array2.length];
@@ -29,4 +31,15 @@ public class MergeSorting {
         }
         return combined;
     }
+
+    public static int[] mergeSort(int[] array){
+        if (array.length == 1) return array;
+        int midIindex = array.length/2;
+        int[] left = mergeSort(Arrays.copyOfRange(array, 0 , midIindex));
+        int[] right = mergeSort(Arrays.copyOfRange(array, midIindex , array.length));
+
+        return merge(left, right);
+    }
 }
+
+
