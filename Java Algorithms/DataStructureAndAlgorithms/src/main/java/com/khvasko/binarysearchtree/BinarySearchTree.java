@@ -1,5 +1,9 @@
 package com.khvasko.binarysearchtree;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
     private Node root;
 
@@ -52,6 +56,43 @@ public class BinarySearchTree {
             }
         }
         return false;
+    }
+
+    public ArrayList<Integer> BFS(){
+        Node currentNode = root;
+        ArrayList<Integer> results = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(currentNode);
+
+        while(queue.size() > 0){
+            currentNode = queue.remove();
+            results.add(currentNode.value);
+            if (currentNode.left != null){
+                queue.add(currentNode.left);
+            }
+            if (currentNode.right!=null){
+                queue.add(currentNode.right);
+            }
+        }
+        return  results;
+    }
+
+    public ArrayList<Integer> DFSPreOrder(){
+        ArrayList<Integer> results = new ArrayList<>();
+
+        class Traverse{
+            Traverse(Node currentNode){
+                results.add(currentNode.value);
+                if (currentNode.left != null){
+                    new Traverse(currentNode.left);
+                }
+                if (currentNode.right != null){
+                    new Traverse(currentNode.right);
+                }
+            }
+        }
+        new Traverse(root);
+        return results;
     }
 }
 
