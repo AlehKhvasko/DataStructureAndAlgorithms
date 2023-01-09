@@ -5,8 +5,12 @@ import com.khvasko.doublyLinkedList.DoublyLinkedList;
 import com.khvasko.hashtable.HashTable;
 import com.khvasko.linkedlist.LinkedList;
 import com.khvasko.queue.Queue;
+import com.khvasko.quicksort.QuickSort;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 @SpringBootApplication
 public class Main {
@@ -46,7 +50,11 @@ public class Main {
         hashTable.set("screws", 115);
         hashTable.printTable();
         System.out.println(hashTable.keys());
-    }
 
+
+        int[] randomNums = {4, 2, 1, 7, 0, 1, 4, 3, 0};
+        QuickSort.quickSort(randomNums);
+        System.out.println(Arrays.toString(randomNums));
+    }
 
 }
